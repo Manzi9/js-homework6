@@ -24,19 +24,19 @@ const goButton = document.getElementById("go");
 const goLight = document.querySelector(".light.go");
 
 stopButton.addEventListener("click", (e) => {
-  stopLight.classList.add("on");
+  stopLight.classList.toggle("on");
   cautionLight.classList.remove("on");
   goLight.classList.remove("on");
 });
 
 cautionButton.addEventListener("click", (e) => {
   stopLight.classList.remove("on");
-  cautionLight.classList.add("on");
+  cautionLight.classList.toggle("on");
   goLight.classList.remove("on");
 });
 
 goButton.addEventListener("click", (e) => {
   stopLight.classList.remove("on");
   cautionLight.classList.remove("on");
-  goLight.classList.add("on");
+  goLight.classList.toggle("on");
 });
