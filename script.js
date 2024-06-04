@@ -22,6 +22,7 @@ const cautionButton = document.getElementById("caution");
 const cautionLight = document.querySelector(".light.caution");
 const goButton = document.getElementById("go");
 const goLight = document.querySelector(".light.go");
+const playButton = document.getElementById("play");
 
 stopButton.addEventListener("click", (e) => {
   stopLight.classList.toggle("on");
@@ -39,4 +40,25 @@ goButton.addEventListener("click", (e) => {
   stopLight.classList.remove("on");
   cautionLight.classList.remove("on");
   goLight.classList.toggle("on");
+});
+
+clear.addEventListener("click", function (e) {
+  stopLight.classList.remove("on");
+  cautionLight.classList.remove("on");
+  goLight.classList.remove("on");
+});
+
+play.addEventListener("click", (e) => {
+  //Have to CLEAR first
+  //Why do we need arrow again?
+  setTimeout(() => {
+    stopLight.classList.add("on");
+    cautionLight.classList.add("on");
+  }, 2000);
+
+  setTimeout(() => {
+    stopLight.classList.add("off");
+    cautionLight.classList.add("off");
+    goLight.classList.add("on");
+  }, 4000);
 });
