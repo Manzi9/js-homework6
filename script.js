@@ -18,7 +18,25 @@
 
 const stopButton = document.getElementById("stop");
 const stopLight = document.querySelector(".light.stop");
+const cautionButton = document.getElementById("caution");
+const cautionLight = document.querySelector(".light.caution");
+const goButton = document.getElementById("go");
+const goLight = document.querySelector(".light.go");
 
 stopButton.addEventListener("click", (e) => {
-  stopLight.classList.add(".stop.on");
+  stopLight.classList.add("on");
+  cautionLight.classList.remove("on");
+  goLight.classList.remove("on");
+});
+
+cautionButton.addEventListener("click", (e) => {
+  stopLight.classList.remove("on");
+  cautionLight.classList.add("on");
+  goLight.classList.remove("on");
+});
+
+goButton.addEventListener("click", (e) => {
+  stopLight.classList.remove("on");
+  cautionLight.classList.remove("on");
+  goLight.classList.add("on");
 });
