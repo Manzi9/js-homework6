@@ -57,8 +57,8 @@ play.addEventListener("click", (e) => {
   }, 2000);
 
   setTimeout(() => {
-    stopLight.classList.add("off");
-    cautionLight.classList.add("off");
+    stopLight.classList.remove("on");
+    cautionLight.classList.remove("on");
     goLight.classList.add("on");
   }, 4000);
 });
